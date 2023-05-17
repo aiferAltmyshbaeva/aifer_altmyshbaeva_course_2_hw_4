@@ -6,11 +6,13 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Input 5 names to fill in List A: ");
-        List<String> listA = requestInputListConsole();
+        List<String> listA = new ArrayList<>();
+        populateListFromConsole(listA);
         System.out.println("List A: " + listA);
 
         System.out.println("Input 5 more names to fill in List B: ");
-        List<String> listB = requestInputListConsole();
+        List<String> listB = new ArrayList<>();
+        populateListFromConsole(listB);
         System.out.println("List B: " + listB);
 
         Collections.reverse(listB);
@@ -29,12 +31,10 @@ public class Main {
 
     }
 
-    private static List<String> requestInputListConsole() {
-        List<String> list = new ArrayList<>();
+    private static void populateListFromConsole(List<String> list) {
         for (int i = 0; i < 5; i++) {
             String str = SCANNER.next();
             list.add(str);
         }
-        return list;
     }
 }
